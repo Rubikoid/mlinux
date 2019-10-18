@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -ex
-rootfs_path=$(cat ./rootfs_path)
+rootfs_path=$(cat ./paths/rootfs_path)
 
 echo "#!/bin/sh" > $rootfs_path/init
 echo "dmesg -n 1" >> $rootfs_path/init

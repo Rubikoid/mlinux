@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set -ex
-rootfs_path=$(cat ./rootfs_path)
+rootfs_path=$(cat ./paths/rootfs_path)
 cur_dir=$(pwd)
 
 cd $rootfs_path

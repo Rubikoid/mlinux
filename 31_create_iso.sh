@@ -2,10 +2,10 @@
 
 set -ex
 cur_dir=$(pwd)
-isoimage_path=$(cat isoimage_path)
-kernel_path=$(cat kernel_path)
-syslinux_path="/tmp/mlinux_syslinux"
-target_path=$(cat target_iso)
+isoimage_path=$(cat ./paths/isoimage_path)
+kernel_path=$(cat ./paths/kernel_path)
+syslinux_path=$(cat ./paths/syslinux_path)
+target_path=$(cat ./paths/target_iso)
 
 cd $isoimage_path
 

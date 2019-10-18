@@ -2,7 +2,7 @@
 
 set -ex
 
-target_dir="/tmp/mlinux_syslinux"
+target_dir=$(cat ./paths/syslinux_path)
 target_tarball="syslinux.tar.xz"
 
 if [[ -d $target_dir ]]; then

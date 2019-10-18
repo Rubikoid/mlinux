@@ -2,7 +2,7 @@
 
 set -ex
 cur_dir=$(pwd)
-kernel_path=$(cat kernel_path)
+kernel_path=$(cat ./paths/kernel_path)
 
 if [[ -d $kernel_path ]]; then
     echo "removing old $kernel_path dir"

@@ -2,8 +2,8 @@
 
 set -ex
 cur_dir=$(pwd)
-rootfs_path=$(cat ./rootfs_path)
-target_dir="/tmp/mlinux_busybox"
+rootfs_path=$(cat ./paths/rootfs_path)
+target_dir=$(cat ./paths/busybox_path)
 target_tarball="busybox.tar.bz2"
 
 if [[ -d $target_dir ]]; then

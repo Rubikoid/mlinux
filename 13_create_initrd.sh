@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 set -ex
-rootfs_path=$(cat ./rootfs_path)
-isoimage_path=$(cat ./isoimage_path)
+rootfs_path=$(cat ./paths/rootfs_path)
+isoimage_path=$(cat ./paths/isoimage_path)
 cur_dir=$(pwd)
 
 if [[ -d $isoimage_path ]]; then
