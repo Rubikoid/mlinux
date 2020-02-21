@@ -12,7 +12,7 @@ fi
 mkdir $isoimage_path
 
 cd $rootfs_path
-ldconfig -v -r .
+# ldconfig -v -r .
 # ln -s ./bin/sh ./usr/bin/bash
 find . | cpio -R root:root -H newc -o | gzip > $isoimage_path/rootfs.gz
 cd $cur_dir

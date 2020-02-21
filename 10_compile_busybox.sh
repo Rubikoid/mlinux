@@ -7,8 +7,8 @@ target_dir=$(cat ./paths/busybox_path)
 target_tarball="busybox.tar.bz2"
 
 if [[ -d $target_dir ]]; then
-    echo "NOT removing old $target_dir dir"
-#    rm -rf $target_dir
+    echo "removing old $target_dir dir"
+    rm -rf $target_dir
 fi
 
 if [[ -d $rootfs_path ]]; then
@@ -16,14 +16,14 @@ if [[ -d $rootfs_path ]]; then
     rm -rf $rootfs_path
 fi
 
-# mkdir $target_dir
+mkdir $target_dir
 echo "unpacking $target_tarball"
-# tar xf $target_tarball -C $target_dir --strip-components=1
+tar xf $target_tarball -C $target_dir --strip-components=1
 cd $target_dir
 
-# make distclean
+make distclean
 
-# make defconfig # change to menuconfig if you want to tweak default config
+make defconfig # change to menuconfig if you want to tweak default config
 # make menuconfig
 sed -i "s|.*CONFIG_STATIC.*|CONFIG_STATIC=y|" .config
 sed -i "s|.*CONFIG_PREFIX.*|CONFIG_PREFIX=\"$rootfs_path\"|" .config
