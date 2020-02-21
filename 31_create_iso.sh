@@ -11,7 +11,16 @@ cd $isoimage_path
 
 cp $syslinux_path/bios/core/isolinux.bin .
 cp $syslinux_path/bios/com32/elflink/ldlinux/ldlinux.c32 .
-echo 'default kernel.gz initrd=rootfs.gz' > ./isolinux.cfg
+
+cat > "./isolinux.cfg" <<- EOM
+default g
+label g
+LINUX kernel.gz
+INITRD rootfs.gz
+APPEND vga=0x305
+EOM
+# echo 'default kernel.gz vga=792 initrd=rootfs.gz' > ./isolinux.cfg
+
 xorriso \
     -as mkisofs \
     -o $target_path \

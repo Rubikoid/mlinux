@@ -7,7 +7,7 @@ cur_dir=$(pwd)
 cd $rootfs_path
 
 rm -f ./linuxrc
-mkdir dev proc sys
+# mkdir dev proc sys
 
 cd $cur_dir
 
